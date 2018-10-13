@@ -1,5 +1,5 @@
 #!/bin/bash
 
-LIBMESH_VERSION=0.9.4-rc2
+LIBMESH_VERSION=1.2.1
 
 ./build_libmesh.sh $LIBMESH_VERSION

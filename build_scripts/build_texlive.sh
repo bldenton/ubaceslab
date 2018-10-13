@@ -12,7 +12,8 @@ mkdir -p ${UBCESLAB_SWENV_PREFIX:?undefined}/sourcesdir/texlive
 (cd $UBCESLAB_SWENV_PREFIX/sourcesdir/texlive
 
 if [ ! -f install-tl-unx.tar.gz  ]; then
-  wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz 
+  wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+  wget http://mirror.utexas.edu/ctan/systems/texlive/tlnet/install-tl-unx.tar.gz  
 fi
 )
 

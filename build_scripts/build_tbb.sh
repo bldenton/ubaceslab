@@ -21,7 +21,9 @@ mkdir -p ${UBCESLAB_SWENV_PREFIX:?undefined}/sourcesdir/tbb
 (cd $UBCESLAB_SWENV_PREFIX/sourcesdir/tbb
 
 if [ ! -f tbb${TBB_FULL_VERSION}oss_src.tgz ]; then
-   wget https://www.threadingbuildingblocks.org/sites/default/files/software_releases/source/tbb${TBB_FULL_VERSION}oss_src.tgz 
+#   wget https://www.threadingbuildingblocks.org/sites/default/files/software_releases/source/tbb${TBB_FULL_VERSION}oss_src.tgz 
+
+  wget https://github.com/01org/tbb/releases/tab/2018_U2/tbb-${TBB_FULL_VERSION}.tar.gz
 fi
 )
 
@@ -31,7 +33,8 @@ export TBB_DIR=$TOPDIR/$TBB_VERSION/${COMPILER:?undefined}/${COMPILER_VERSION:?u
 mkdir -p $UBCESLAB_SWENV_PREFIX/builddir
 BUILDDIR=`mktemp -d $UBCESLAB_SWENV_PREFIX/builddir/tbb-XXXXXX`
 cd $BUILDDIR
-tar xzf $UBCESLAB_SWENV_PREFIX/sourcesdir/tbb/tbb${TBB_FULL_VERSION}oss_src.tgz
+#tar xzf $UBCESLAB_SWENV_PREFIX/sourcesdir/tbb/tbb${TBB_FULL_VERSION}oss_src.tgz
+tar xzf $UBCESLAB_SWENG_PREFIX/sourcesdir/tbb/tbb-${TBB_FULL_VERSION}.tar.gz
 cd tbb${TBB_FULL_VERSION}oss
 rm -rf $TBB_DIR
 

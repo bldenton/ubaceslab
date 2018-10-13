@@ -22,7 +22,7 @@ cd $BUILDDIR
 tar -xzf $UBCESLAB_SWENV_PREFIX/sourcesdir/openblas/v$OPENBLAS_VERSION.tar.gz
 cd OpenBLAS-$OPENBLAS_VERSION
 
-(make -j ${NPROC:-1} 2>&1 && touch build_cmd_success) | tee make.log
+(make TARGET=SANDYBRIDGE -j ${NPROC:-1} 2>&1 && touch build_cmd_success) | tee make.log
 rm build_cmd_success
 
 rm -rf $OPENBLAS_DIR
