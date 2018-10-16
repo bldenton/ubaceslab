@@ -11,9 +11,7 @@ mkdir -p ${UBCESLAB_SWENV_PREFIX:?undefined}/sourcesdir/git
 
 (cd $UBCESLAB_SWENV_PREFIX/sourcesdir/git
 if [ ! -f v$GIT_VERSION.tar.gz ]; then
-#if [ ! -f git-$GIT_VERSION.tar.gz ]; then
    wget https://github.com/git/git/archive/v$GIT_VERSION.tar.gz
- # wget https://github.com/git/git/releases/git-$GIT_VERSION.tar.gz
 fi
 )
 
@@ -26,7 +24,6 @@ mkdir -p $BUILDDIR
 cd $BUILDDIR
 
 tar -xzf $UBCESLAB_SWENV_PREFIX/sourcesdir/git/v$GIT_VERSION.tar.gz
-#tar -xzf $UBCESLAB_SWENV_PREFIX/sourcesdir/git/git-$GIT_VERSION.tar.gz
 cd git-$GIT_VERSION || exit 1
 make configure
 ./configure --prefix=$GIT_DIR 
